@@ -11,8 +11,7 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "test": "jest --passWithNoTests",
-    "build": "echo \"No build step needed for this project\""
+    "test": "jest"
   },
   "dependencies": {
     "express": "^5.1.0",
