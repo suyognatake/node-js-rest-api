@@ -1,26 +1,35 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
-    stage('Clone') {
-      steps {
-        git branch: 'main', url: 'https://github.com/suyognatake/node-js-rest-api.git'
-      }
+    stages {
+        stage('Clone') {
+            steps {
+                git url: 'https://github.com/suyognatake/node-js-rest-api.git', branch: 'main'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                bat 'npm install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'npm run build' 
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                bat 'echo Deploy step here'
+            }
+        }
     }
-    stage('Install') {
-      steps {
-        sh 'npm install'
-      }
-    }
-    stage('Test') {
-      steps {
-        sh 'npm test || echo "No tests defined"'
-      }
-    }
-    stage('Build') {
-      steps {
-        echo 'Build complete'
-      }
-    }
-  }
 }
