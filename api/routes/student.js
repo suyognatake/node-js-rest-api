@@ -55,7 +55,7 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-router.post('addStudent', async (req, res) => {
+router.post('/addStudent', async (req, res) => {
   try {
     const { name, email, phone, gender } = req.body;
 
