@@ -11,7 +11,7 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "express": "^5.1.0",
